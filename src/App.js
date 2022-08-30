@@ -27,7 +27,7 @@ const App = () => {
           user
             ? {
                 uid: user.proactiveRefresh.user.uid,
-                displayName: user.proactiveRefresh.user.displayName,
+                email: user.proactiveRefresh.user.email,
               }
             : null
         )
@@ -35,7 +35,7 @@ const App = () => {
     });
 
     return unsubscribe;
-  }, []);
+  }, [dispatch]);
 
   return (
     <Routes>
