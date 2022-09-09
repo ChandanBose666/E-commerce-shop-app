@@ -7,7 +7,7 @@ import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 import {
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
-import { googleSignInStart } from "../../store/user/user.action";
+import { googleSignInStart, emailSignInStart } from "../../store/user/user.action";
 
 import "./sign-in-form.styles.scss";
 
@@ -33,10 +33,10 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
-      await signInAuthUserWithEmailAndPassword(
+      dispatch(emailSignInStart(
         email,
         password
-      );
+      ));
 
       resetFormFields();
     } catch (error) {
