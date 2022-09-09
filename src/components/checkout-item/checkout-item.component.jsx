@@ -6,6 +6,7 @@ import {
 } from "../../store/cart/cart.action";
 import { selectCartItems } from "../../store/cart/cart.selector";
 
+
 import "./checkout-item.styles.scss";
 
 const CheckoutItem = ({ cartItem }) => {
